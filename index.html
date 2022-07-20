@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Números Felizes e Sortudos!</title>
+  </head>
+  <body>
+    <input id="number-input" type="text" />
+    <button onclick="showHapinessMsg()">O número é feliz?</button>
+    <button onclick="showLuckMsg()">O número é sortudo?</button>
+    <p id="msg"></p>
+
+    <script type="module">
+      import { isHappyNumber, isLuckyNumber } from "./src/index.js";
+
+      function extractNumber() {
+        const inputValue = document.getElementById("number-input").value;
+        const number = parseInt(inputValue);
+        return number;
+      }
+
+      function showMsg(msg) {
+        const msgElem = document.getElementById("msg");
+        msgElem.innerText = msg;
+      }
+
+      function showHapinessMsg() {
+        const number = extractNumber();
+
+        if (!number || number < 1)
+          showMsg("Por favor, digite um inteiro positivo!");
+        else {
+          const isHappy = isHappyNumber(number);
+          showMsg(`O número ${number} ${isHappy ? "é" : "não é"} feliz.`);
+        }
+      }
+
+      function showLuckMsg() {
+        const number = extractNumber();
+
+        if (!number || number < 1)
+          showMsg("Por favor, digite um inteiro positivo!");
+        else {
+          const isLucky = isLuckyNumber(number);
+          showMsg(`O número ${number} ${isLucky ? "é" : "não é"} sortudo.`);
+        }
+      }
+
+      // "Exporting" functions to the window
+      window.showHapinessMsg = showHapinessMsg;
+      window.showLuckMsg = showLuckMsg;
+    </script>
+  </body>
+</html>

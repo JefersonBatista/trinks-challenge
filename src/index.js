@@ -20,8 +20,9 @@ function squaredDigitsSum(number) {
 }
 
 export function isLuckyNumber(number) {
-  // Trivial case
+  // Trivial cases
   if (number === 1) return true;
+  if (number % 2 === 0) return false;
 
   let array = [...Array(number).keys()].map((n) => n + 1);
 
@@ -31,16 +32,19 @@ export function isLuckyNumber(number) {
   let currPos = 2;
   let currNumber = array[currPos - 1];
 
-  while (currPos <= array.length) {
-    // Stop condition of the algorithm
-    if (currNumber >= number) return true;
-
+  while (true) {
+    // Update array: delete numbers in positions multiple of currNumber
     array = array.filter((_, index) => (index + 1) % currNumber !== 0);
+    const found = array.find((n) => n === number);
 
+    // The number is no more in the array
+    if (!found) return false;
+
+    // Go to next step
     currPos += 1;
     currNumber = array[currPos - 1];
-  }
 
-  // The number is no more in the array
-  return false;
+    // The number will remain in the array
+    if (!currNumber || currNumber > array.length) return true;
+  }
 }
