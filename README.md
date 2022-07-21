@@ -1,6 +1,8 @@
 # Desafio Técnico da Trinks
 
-A primeira questão do desafio técnico da Trinks se chama "Números Felizes e Sortudos" e pede para identificar se um determinado número é feliz e se é sortudo.
+A primeira questão de um desafio técnico da Trinks se chama "Números Felizes e Sortudos" e pede para identificar se um determinado número é feliz e se é sortudo.
+
+A aplicação pode ser acessada em https://jefersonbatista.github.io/trinks-challenge.
 
 ## Números Felizes
 
@@ -46,7 +48,7 @@ npm i
 npm start
 ```
 
-4. Abra um navegador e acesse o endereço `localhost:3000`.
+4. Abra um navegador e acesse o endereço http://localhost:3000.
 
 ## Como testar
 
