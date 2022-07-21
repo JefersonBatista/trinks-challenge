@@ -36,4 +36,14 @@ describe("Test cases", () => {
     expect(isHappyNumber(number)).toBe(true);
     expect(isLuckyNumber(number)).toBe(true);
   });
+  it("Number 19", () => {
+    const number = 19;
+    expect(isHappyNumber(number)).toBe(true);
+    expect(isLuckyNumber(number)).toBe(false);
+  });
+  it("Number 13", () => {
+    const number = 13;
+    expect(isHappyNumber(number)).toBe(true);
+    expect(isLuckyNumber(number)).toBe(true);
+  });
 });
