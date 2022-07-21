@@ -4,13 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
     <title>Números Felizes e Sortudos!</title>
   </head>
   <body>
-    <input id="number-input" type="text" />
-    <button onclick="showHapinessMsg()">O número é feliz?</button>
-    <button onclick="showLuckMsg()">O número é sortudo?</button>
-    <p id="msg"></p>
+    <div class="container">
+      <p>Digite um número:</p>
+      <input id="number-input" type="text" />
+      <div class="options">
+        <button onclick="showHapinessMsg()">O número é feliz?</button>
+        <button onclick="showLuckMsg()">O número é sortudo?</button>
+      </div>
+      <p id="msg"></p>
+    </div>
 
     <script type="module">
       import { isHappyNumber, isLuckyNumber } from "./src/index.js";
